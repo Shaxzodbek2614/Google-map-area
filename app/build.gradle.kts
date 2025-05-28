@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
+
 }
 
 android {
@@ -33,8 +35,8 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
+    viewBinding {
+        enable = true
     }
 }
 
@@ -45,10 +47,23 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.play.services.maps)
+    implementation(libs.gms.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.androidx.room.runtime.android)
+    implementation(libs.androidx.material3.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.android.maps.utils)
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+
+    implementation("com.google.maps.android:android-maps-utils:3.8.0")
+    kapt("androidx.room:room-compiler:2.7.1") // sizning versiyangizga mos
+
+
+
+
+
+
 }

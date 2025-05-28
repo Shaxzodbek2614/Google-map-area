@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -18,11 +18,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoogleMapArea"
         tools:targetApi="31">
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDnv-5qJljahx-eKsOPjfgiMsIh0mll8NE" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.PickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DistanceSaveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DistanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PolygonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SavedListActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".activities.KirishActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +42,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDnv-5qJljahx-eKsOPjfgiMsIh0mll8NE" />
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
